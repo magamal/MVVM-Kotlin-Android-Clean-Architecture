@@ -1,0 +1,39 @@
+import dependencies.*
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+    }
+    androidExtensions {
+        experimental = true
+    }
+
+}
+
+kapt {
+    correctErrorTypes = true
+    generateStubs = true
+}
+
+
+dependencies {
+
+    implementation project(':Domain')
+    implementation project(':Data')
+    implementation project(':Remote')
+
+    implementation Dependencies.Kotlin
+    implementation Dependencies.RxJava
+    implementation Dependencies.RxAndroid
+    implementation Dependencies.Koin
+    implementation Dependencies.KoinAndroid
+    implementation Dependencies.AndroidArchComponent
+}

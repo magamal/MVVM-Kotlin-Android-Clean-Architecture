@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="network_error">Network Error</string>
+    <string name="retry">Retry</string>
+</resources>

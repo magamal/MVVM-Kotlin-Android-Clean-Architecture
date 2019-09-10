@@ -1,0 +1,14 @@
+import dependencies.Dependencies
+
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':Domain')
+
+    implementation Dependencies.Koin
+    implementation Dependencies.RxJava
+    implementation Dependencies.Kotlin
+}
+

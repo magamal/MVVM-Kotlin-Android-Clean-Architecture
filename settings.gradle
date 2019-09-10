@@ -1,0 +1,2 @@
+include ':Domain', ':Remote', ':Data', ':Presentation', ':MobileUi'
+rootProject.name = 'News'

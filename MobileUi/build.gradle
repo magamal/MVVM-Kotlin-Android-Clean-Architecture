@@ -1,0 +1,53 @@
+import dependencies.Config
+import dependencies.Dependencies
+import dependencies.Versions
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.magamal.news"
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_API_URL", "\"${Config.API_BASE_URL}\"")
+            buildConfigField("String", "API_KEY", "\"${Config.API_KEY}\"")
+        }
+        debug {
+            buildConfigField("String", "BASE_API_URL", "\"${Config.API_BASE_URL}\"")
+            buildConfigField("String", "API_KEY", "\"${Config.API_KEY}\"")
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':Domain')
+    implementation project(':Data')
+    implementation project(':Remote')
+    implementation project(':Presentation')
+
+    implementation Dependencies.Kotlin
+    implementation Dependencies.AppCompact
+    implementation Dependencies.AndroidXCore
+    implementation Dependencies.AndroidXLibs
+    implementation Dependencies.AndroidArchComponent
+    implementation Dependencies.Koin
+    implementation Dependencies.KoinAndroid
+    implementation Dependencies.Picasso
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}
