@@ -49,9 +49,7 @@ class NewsListViewModel(
     }
 
     fun loadMore() {
-        if (isLoading())
-            return
-        else
+        if (!isLoading())
             fetchData()
     }
 

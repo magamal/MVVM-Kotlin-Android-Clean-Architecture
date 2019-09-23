@@ -2,7 +2,7 @@ package com.news.remote.models.news
 
 
 import com.google.gson.annotations.SerializedName
-import com.news.remote.models.Model
+import com.news.remote.models.RemoteModel
 
 data class NewsResponseModel(
     @SerializedName("articles")
@@ -11,4 +11,4 @@ data class NewsResponseModel(
     val status: String?,
     @SerializedName("totalResults")
     val totalResults: Int?
-) : Model
+) : RemoteModel

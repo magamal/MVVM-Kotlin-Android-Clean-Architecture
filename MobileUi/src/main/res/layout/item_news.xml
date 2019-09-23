@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -37,7 +36,7 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgNewsIcon"
+        app:layout_constraintStart_toEndOf="@id/imgNewsIcon"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Car Accedent!!" />
 
@@ -51,15 +50,15 @@
         android:lines="3"
         android:layout_marginEnd="4dp"
         android:maxLines="3"
-        android:text="car accdent"
+        tools:text="car accdent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgNewsIcon"
+        app:layout_constraintStart_toEndOf="@id/imgNewsIcon"
         app:layout_constraintTop_toBottomOf="@+id/tvNewsTitle" />
 
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
-        app:layout_constraintStart_toEndOf="@+id/imgNewsIcon"
+        app:layout_constraintStart_toEndOf="@id/imgNewsIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/black"

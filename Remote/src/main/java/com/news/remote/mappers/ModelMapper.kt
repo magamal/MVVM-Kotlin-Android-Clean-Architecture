@@ -1,7 +1,7 @@
 package com.news.remote.mappers
 
 import com.news.data.models.Entity
-import com.news.remote.models.Model
+import com.news.remote.models.RemoteModel
 
 
 /**
@@ -9,6 +9,6 @@ import com.news.remote.models.Model
  * @M : is for Entity model (in remote layer)
  * @E : is for request model (in clientInfo layer)
  */
-interface ModelMapper<M : Model, E : Entity> {
+interface ModelMapper<M : RemoteModel, E : Entity> {
     fun mapFromModel(model: M?): E
 }

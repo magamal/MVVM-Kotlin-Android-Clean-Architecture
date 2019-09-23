@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.magamal.news.R
 import com.magamal.news.extentions.addEndlessScroll
+import com.magamal.news.extentions.hide
+import com.magamal.news.extentions.show
 import com.magamal.news.ui.news.adapters.NewsAdapter
 import com.magamal.news.ui.newsDetails.DetailsActivity
 import com.news.presentation.base.Resource
@@ -45,10 +47,10 @@ class MainActivity : AppCompatActivity() {
         resource?.let { (news, state, error) ->
             when (state) {
                 Resource.State.LOADING -> {
-                    progress.visibility = View.VISIBLE
+                    progress.show()
                 }
                 Resource.State.SUCCESS -> {
-                    progress.visibility = View.GONE
+                    progress.hide()
                     news?.let {
                         it.articles?.let {
                             newsAdapter.items?.addAll(it)
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 Resource.State.ERROR -> {
-                    progress.visibility = View.GONE
+                    progress.hide()
                     Snackbar.make(viewNewsList, R.string.network_error, Snackbar.LENGTH_INDEFINITE)
                         .setAction(R.string.retry) {
                             fetchData(null)

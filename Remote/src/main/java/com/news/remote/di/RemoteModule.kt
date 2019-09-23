@@ -15,17 +15,22 @@ import org.koin.dsl.module
 val remoteModule = module {
 
     /**
-     * ModelMapper
+     * RemoteModel mappers
      */
     factory { NewsResponseModelMapper(get()) }
     factory { ArticleModelMapper(get()) }
     factory { SourceModelMapper() }
 
 
-
+    /**
+     * Remote repositories
+     */
     single<NewsRemote> { NewsRetrofitRemoteRepo(get(), get()) }
 
 
+    /**
+     * Retrofit services
+     */
     single { RetrofitClient.create(NewsService::class.java) }
 
 }

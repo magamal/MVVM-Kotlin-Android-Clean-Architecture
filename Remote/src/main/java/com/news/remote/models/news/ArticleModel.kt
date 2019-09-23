@@ -2,7 +2,7 @@ package com.news.remote.models.news
 
 
 import com.google.gson.annotations.SerializedName
-import com.news.remote.models.Model
+import com.news.remote.models.RemoteModel
 
 data class ArticleModel(
     @SerializedName("author")
@@ -21,4 +21,4 @@ data class ArticleModel(
     val url: String?,
     @SerializedName("urlToImage")
     val urlToImage: String?
-) : Model
+) : RemoteModel

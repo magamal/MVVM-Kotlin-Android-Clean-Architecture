@@ -9,7 +9,7 @@ import com.magamal.news.extentions.loadImage
 import com.news.presentation.models.news.ArticlePresentation
 import kotlinx.android.synthetic.main.activity_details.*
 import android.net.Uri
-import android.view.View
+import com.magamal.news.extentions.show
 
 
 class DetailsActivity : AppCompatActivity() {
@@ -31,7 +31,7 @@ class DetailsActivity : AppCompatActivity() {
             tvContent.text = content
             tvDate.text = getFormattedDate()
             source?.name?.let {
-                tvSource.visibility = View.VISIBLE
+                tvSource.show()
                 tvSource.text = it
                 tvSource.setOnClickListener {onSourceClicked()}
             }
