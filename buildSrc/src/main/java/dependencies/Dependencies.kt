@@ -59,11 +59,11 @@ object Dependencies {
 
 
     val RxJava = arrayOf(
-        "io.reactivex.rxjava2:rxkotlin:${Versions.RX.rxKotlin}",
-        "io.reactivex.rxjava2:rxjava:${Versions.RX.rxJava}"
+        "io.reactivex.rxjava3:rxkotlin:${Versions.RX.rxKotlin}",
+        "io.reactivex.rxjava3:rxjava:${Versions.RX.rxJava}"
     )
     val RxAndroid = arrayOf(
-        "io.reactivex.rxjava2:rxandroid:${Versions.RX.rxAndroid}"
+        "io.reactivex.rxjava3:rxandroid:${Versions.RX.rxAndroid}"
     )
 
     val Retrofit = arrayOf(
@@ -71,7 +71,7 @@ object Dependencies {
         "com.squareup.okhttp3:logging-interceptor:${Versions.Retrofit.okHttp}",
         "com.squareup.okhttp3:okhttp-urlconnection:${Versions.Retrofit.okHttp}",
         "com.squareup.retrofit2:retrofit:${Versions.Retrofit.retrofit}",
-        "com.squareup.retrofit2:adapter-rxjava2:${Versions.Retrofit.retrofit}",
+        "com.squareup.retrofit2:adapter-rxjava3:${Versions.Retrofit.retrofit}",
         "com.squareup.retrofit2:converter-gson:${Versions.Retrofit.retrofit}"
     )
 

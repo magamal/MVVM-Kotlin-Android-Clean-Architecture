@@ -7,7 +7,7 @@ import com.news.domain.models.news.Source
 /**
  * Created by Mahmoud Gamal on 2019-09-06.
  */
-class SourceEntityMapper() : EntityMapper<SourceEntity, Source> {
+class SourceEntityMapper : EntityMapper<SourceEntity, Source> {
     override fun mapToDomain(entity: SourceEntity?): Source {
         return Source(
             id = entity?.id,

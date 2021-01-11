@@ -8,7 +8,7 @@ import com.news.presentation.models.news.ArticlePresentation
  * Created by Mahmoud Gamal on 2019-09-06.
  */
 class ArticlePresentationMapper(private val sourceMapper: SourcePresentationMapper) :
-    PresentationMapper<Article,ArticlePresentation> {
+    PresentationMapper<Article, ArticlePresentation> {
     override fun mapToPresentation(domain: Article?): ArticlePresentation {
         return ArticlePresentation(
             author = domain?.author,

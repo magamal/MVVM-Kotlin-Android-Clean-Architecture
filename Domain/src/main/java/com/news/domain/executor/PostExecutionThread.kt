@@ -1,6 +1,6 @@
 package com.news.domain.executor
 
-import io.reactivex.Scheduler
+import io.reactivex.rxjava3.core.Scheduler
 
 
 interface PostExecutionThread {

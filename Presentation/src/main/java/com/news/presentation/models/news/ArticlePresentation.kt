@@ -4,9 +4,6 @@ import android.os.Parcelable
 import com.news.presentation.models.PresentationModel
 import kotlinx.android.parcel.Parcelize
 import java.text.SimpleDateFormat
-import java.time.Instant
-import java.time.format.DateTimeFormatter
-import java.util.*
 
 @Parcelize
 data class ArticlePresentation(
@@ -27,7 +24,6 @@ data class ArticlePresentation(
 
             return SimpleDateFormat("yy/mm/dd hh:mm")
                 .format(date)
-
 
 
         } catch (e: Exception) {

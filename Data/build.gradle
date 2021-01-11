@@ -6,6 +6,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':Domain')
+    implementation project(':Common')
 
     implementation Dependencies.Koin
     implementation Dependencies.RxJava

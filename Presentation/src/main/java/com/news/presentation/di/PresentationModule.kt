@@ -23,5 +23,5 @@ val presentationModule = module {
     factory { SourcePresentationMapper() }
 
 
-    viewModel { NewsListViewModel(get(),get()) }
+    viewModel { NewsListViewModel(get(), get()) }
 }

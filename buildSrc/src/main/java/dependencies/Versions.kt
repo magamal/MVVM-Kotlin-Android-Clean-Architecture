@@ -45,14 +45,14 @@ object Versions {
     }
 
     object RX {
-        const val rxAndroid = "2.0.1"
-        const val rxKotlin = "2.1.0"
-        const val rxJava = "2.2.12"
+        const val rxAndroid = "3.0.0"
+        const val rxKotlin = "3.0.1"
+        const val rxJava = "3.0.9"
     }
 
     object Retrofit {
-        const val retrofit = "2.6.1"
-        const val okHttp = "4.1.1"
+        const val retrofit = "2.9.0"
+        const val okHttp = "4.9.0"
     }
 
     const val PICASSO = "2.5.0"

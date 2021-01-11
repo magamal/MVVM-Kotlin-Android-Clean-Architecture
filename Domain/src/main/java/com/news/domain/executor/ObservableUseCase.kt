@@ -1,8 +1,8 @@
 package com.news.domain.executor
 
 import com.news.domain.models.DomainModel
-import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 abstract class ObservableUseCase<T : DomainModel, in E>(private val schedulerThread: PostExecutionThread) {
 

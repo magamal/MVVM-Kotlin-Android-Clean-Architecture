@@ -16,6 +16,12 @@ android {
         experimental = true
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
 }
 
 kapt {
@@ -29,6 +35,7 @@ dependencies {
     implementation project(':Domain')
     implementation project(':Data')
     implementation project(':Remote')
+    implementation project(':Common')
 
     implementation Dependencies.Kotlin
     implementation Dependencies.RxJava

@@ -29,6 +29,10 @@ android {
             buildConfigField("String", "API_KEY", "\"${Config.API_KEY}\"")
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 }
 
@@ -39,6 +43,7 @@ dependencies {
     implementation project(':Data')
     implementation project(':Remote')
     implementation project(':Presentation')
+    implementation project(':Common')
 
     implementation Dependencies.Kotlin
     implementation Dependencies.AppCompact

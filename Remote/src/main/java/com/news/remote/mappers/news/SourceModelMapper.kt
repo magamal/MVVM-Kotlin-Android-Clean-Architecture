@@ -7,7 +7,7 @@ import com.news.remote.models.news.SourceModel
 /**
  * Created by Mahmoud Gamal on 2019-09-06.
  */
-class SourceModelMapper() : ModelMapper<SourceModel, SourceEntity> {
+class SourceModelMapper : ModelMapper<SourceModel, SourceEntity> {
     override fun mapFromModel(model: SourceModel?): SourceEntity {
         return SourceEntity(
             id = model?.id,

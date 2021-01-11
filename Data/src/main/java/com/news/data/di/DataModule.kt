@@ -4,7 +4,6 @@ import com.news.data.NewsDataRepoImpl
 import com.news.data.mappers.news.ArticleEntityMapper
 import com.news.data.mappers.news.NewsEntityMapper
 import com.news.data.mappers.news.SourceEntityMapper
-import com.news.data.repository.news.NewsDataStore
 import com.news.data.store.news.NewsDataStoreFactory
 import com.news.data.store.news.NewsRemoteDataStore
 import com.news.domain.repository.NewsRepository

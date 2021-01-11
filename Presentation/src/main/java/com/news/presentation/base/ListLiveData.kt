@@ -8,13 +8,13 @@ import androidx.lifecycle.MutableLiveData
  *     the first list is for all items
  *     the second is for added items
  */
-class ListLiveData<T> : MutableLiveData<Pair<ArrayList<T>,ArrayList<T>>>() {
+class ListLiveData<T> : MutableLiveData<Pair<ArrayList<T>, ArrayList<T>>>() {
     private var addedItems = ArrayList<T>()
 
-    fun addItem(items:List<T>){
+    fun addItem(items: List<T>) {
         addedItems = items as ArrayList<T>
         var allItems = value
-        if (allItems == null || allItems?.first == null)
+        if (allItems == null || allItems.first == null)
             allItems = Pair(arrayListOf(), arrayListOf())
 
         allItems.first.addAll(items)
