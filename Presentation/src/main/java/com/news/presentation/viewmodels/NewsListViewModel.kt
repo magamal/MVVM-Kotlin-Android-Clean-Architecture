@@ -3,7 +3,6 @@ package com.news.presentation.viewmodels
 import androidx.lifecycle.LifecycleOwner
 import com.news.domain.usecase.news.GetNewsUseCase
 import com.news.presentation.base.BaseViewModel
-import com.news.presentation.base.ListLiveDataObserver
 import com.news.presentation.base.MutableListLiveData
 import com.news.presentation.mapper.news.NewsPresentationMapper
 import com.news.presentation.models.news.ArticlePresentation
@@ -20,20 +19,13 @@ class NewsListViewModel(
     private val newsLiveData = MutableListLiveData<ArticlePresentation>()
 
     fun observeOnNews(
-        lifecycleOwner: LifecycleOwner, observer: ListLiveDataObserver<ArticlePresentation>
-    ) {
-        newsLiveData.observe(lifecycleOwner, observer)
-    }
-
-    fun observeOnNews(
         owner: LifecycleOwner,
         onLoading: () -> Unit,
         onError: (Throwable?) -> Unit,
         onNewData: (List<ArticlePresentation>, List<ArticlePresentation>) -> Unit
 
-    ) {
-        newsLiveData.observe(owner, onLoading, onError, onNewData)
-    }
+    ) = newsLiveData.observe(owner, onLoading, onError, onNewData)
+
 
     fun fetchData(page: Int, pageSize: Int) {
         newsLiveData.loading()

@@ -17,8 +17,6 @@ class NewsRetrofitRemoteRepo(
     override fun getNews(page: Int, pageSize: Int): Observable<NewsEntity> =
         newsService
             .getNews(page = page, pageSize = pageSize)
-            .map {
-                newsMapper.mapFromModel(model = it)
-            }
+            .map(newsMapper::mapFromModel)
 
 }

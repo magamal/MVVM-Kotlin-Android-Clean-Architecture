@@ -1,0 +1,39 @@
+apply plugin: 'org.sonarqube'
+
+def projectName = "News-Android"
+def projectKey = "09fc7d8cf8fac65512e9ae47856f81c8b8a3fb8c"
+
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "$projectName"
+        property "sonar.projectKey", "$projectKey"
+        property "sonar.tests", ["./MobileUi/src/test/java,./Presentation/src/test/java,./Domain/src/test/java,./Data/src/test/java,./Remote/src/test/java,./Common/src/test/java,"]
+//        property "sonar.test.inclusions", "**/*Test*/**," +
+//                "**/*test*/**," +
+//                "**/*androidTest*/**,"
+
+        property "sonar.language", "java"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "./src/main"
+//                "./MobileUi/src/main/java," +
+//                        "./Presentation/src/main/java," +
+//                        "./Domain/src/main/java," +
+//                        "./Data/src/main/java," +
+//                        "./Remote/src/main/java," +
+//                        "./Common/src/main/java,"
+
+//                "./MobileUi/src/main," +
+//                        "./Presentation/src/main," +
+//                        "./Domain/src/main," +
+//                        "./Data/src/main," +
+//                        "./Remote/src/main," +
+//                        "./Common/src/main,"
+
+
+        property "sonar.binaries", "**/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes"
+
+        property "sonar.exclusions",
+                "**/*Test*/**,build/**,**/*.png,*.json,**/*test*/**,**/.gradle/**,**/R.class"
+    }
+}

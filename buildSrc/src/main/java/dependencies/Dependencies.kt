@@ -42,14 +42,17 @@ object Dependencies {
 
     val Testing = arrayOf(
         // Android Unit Testing
-        "androidx.test:runner:${Versions.Testing.runner}",
-        "androidx.test.espresso:espresso-core:${Versions.Testing.espresso}",
-
+//        "androidx.test:runner:${Versions.Testing.runner}",
         // Mockito
         "org.mockito:mockito-core:${Versions.Testing.mockito}",
 
         // JUnit
         "junit:junit:${Versions.Testing.junit}"
+    )
+
+    val AndroidTesting = arrayOf(
+        "androidx.test.ext:junit:${Versions.Testing.androidXRunner}",
+        "androidx.test.espresso:espresso-core:${Versions.Testing.espresso}"
     )
 
     const val Kotlin =
@@ -97,7 +100,7 @@ object Dependencies {
         "org.koin:koin-androidx-ext:${Versions.KOIN}"
     )
 
-   const val Gson = "com.google.code.gson:gson:${Versions.GSON}"
+    const val Gson = "com.google.code.gson:gson:${Versions.GSON}"
 
     const val Ktlint = "com.pinterest:ktlint:${Versions.KTLINT}"
 }

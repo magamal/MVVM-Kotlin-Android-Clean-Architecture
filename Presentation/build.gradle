@@ -11,6 +11,7 @@ android {
     defaultConfig {
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdkVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     androidExtensions {
         experimental = true
@@ -43,4 +44,7 @@ dependencies {
     implementation Dependencies.Koin
     implementation Dependencies.KoinAndroid
     implementation Dependencies.AndroidArchComponent
+
+    testImplementation Dependencies.Testing
+    androidTestImplementation Dependencies.AndroidTesting
 }

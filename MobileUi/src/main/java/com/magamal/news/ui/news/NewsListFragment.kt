@@ -4,14 +4,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.magamal.news.R
 import com.magamal.news.base.BaseFragment
 import com.magamal.news.extentions.addEndlessScroll
-import com.magamal.news.extentions.hide
-import com.magamal.news.extentions.show
+import com.magamal.news.extentions.toGone
+import com.magamal.news.extentions.toVisible
 import com.magamal.news.ui.news.adapters.NewsAdapter
 import com.news.presentation.viewmodels.NewsListViewModel
 import kotlinx.android.synthetic.main.fragment_news_list.*
 import org.koin.android.ext.android.get
 
-private const val PAGE_SIZE = 20
+private const val PAGE_SIZE = 10
 
 class NewsListFragment : BaseFragment<NewsListViewModel>() {
 
@@ -30,7 +30,6 @@ class NewsListFragment : BaseFragment<NewsListViewModel>() {
         newsScrollView.addEndlessScroll(::loadMore)
     }
 
-    override fun setupData() {}
 
     override fun setupObservers() {
         setupNewsObserver()
@@ -41,13 +40,12 @@ class NewsListFragment : BaseFragment<NewsListViewModel>() {
     private fun setupNewsObserver() {
         viewModel.observeOnNews(this,
             onLoading = {
-                progress.show()
-            }, onError = { throwable ->
-                progress.hide()
-
+                progress.toVisible()
+            }, onError = {
+                progress.toGone()
             }, onNewData = { newItems, allItems ->
                 page++
-                progress.hide()
+                progress.toGone()
                 newsAdapter.addItems(
                     if (newsAdapter.itemCount == 0)
                         allItems
@@ -63,8 +61,6 @@ class NewsListFragment : BaseFragment<NewsListViewModel>() {
             fetchData()
     }
 
-    override fun fetchData() {
-        viewModel.fetchData(page = page, pageSize = PAGE_SIZE)
-    }
+    override fun fetchData() = viewModel.fetchData(page = page, pageSize = PAGE_SIZE)
 
 }

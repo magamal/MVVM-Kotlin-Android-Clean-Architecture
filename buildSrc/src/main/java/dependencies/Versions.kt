@@ -32,6 +32,7 @@ object Versions {
         const val runner = "1.1.2-alpha01"
         const val junit = "4.12"
         const val junitPlatform = "1.0.0"
+        const val androidXRunner="1.1.1"
     }
 
     object Kotlin {

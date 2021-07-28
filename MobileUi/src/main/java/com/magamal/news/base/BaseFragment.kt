@@ -13,9 +13,7 @@ import com.news.presentation.base.BaseViewModel
 abstract class BaseFragment<T : BaseViewModel> : Fragment() {
 
 
-    val viewModel: T by lazy {
-        createViewModel()
-    }
+    val viewModel: T by lazy { createViewModel() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,16 +36,30 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
 
     abstract fun createViewModel(): T
 
-    abstract fun setupViews()
+    /**
+     * this method is a callback used to initialize your view
+     * and called after @link #setupData()
+     */
+    protected open fun setupViews() {}
 
-    abstract fun setupData()
+    /**
+     * this method is a callback used to setup your data
+     * and called after @link #getLayoutRes()
+     */
+    protected open fun setupData() {}
 
-    abstract fun setupObservers()
 
-    abstract fun fetchData()
+    /**
+     * this method is a callback used to setup your observers
+     * and called after @link #setupViews()
+     */
+    protected open fun setupObservers() {}
 
-    fun showError(throwable: Throwable?) {
-
-    }
+    /**
+     * this method is a callback used to fetching data
+     * and called after @link #setupObservers()
+     * this callback will be called automatic when you first load the fragment
+     */
+    protected open fun fetchData() {}
 
 }

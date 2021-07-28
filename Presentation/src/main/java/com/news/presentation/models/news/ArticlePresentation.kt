@@ -18,17 +18,17 @@ data class ArticlePresentation(
 ) : PresentationModel, Parcelable {
 
     fun getFormattedDate(): String? {
-        try {
+        return try {
             val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
                 .parse(publishedAt)
 
-            return SimpleDateFormat("yy/mm/dd hh:mm")
+            SimpleDateFormat("yy/mm/dd hh:mm")
                 .format(date)
 
 
         } catch (e: Exception) {
             e.printStackTrace()
-            return publishedAt
+            publishedAt
         }
 
     }

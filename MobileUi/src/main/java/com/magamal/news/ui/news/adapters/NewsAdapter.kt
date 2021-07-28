@@ -26,7 +26,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        items[position].run {
+        items[position].apply {
             holder.itemView.apply {
                 imgNewsIcon.loadImage(urlToImage)
                 tvNewsTitle.text = title
@@ -35,7 +35,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
         }
     }
 
-    fun addItems(items: List<ArticlePresentation>) {
+        fun addItems(items: List<ArticlePresentation>) {
         this.items.addAll(items)
         notifyDataSetChanged()
     }

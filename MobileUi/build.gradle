@@ -15,6 +15,7 @@ android {
         targetSdkVersion Versions.targetSdkVersion
         versionCode Versions.versionCode
         versionName Versions.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
 
@@ -53,4 +54,7 @@ dependencies {
     implementation Dependencies.Koin
     implementation Dependencies.KoinAndroid
     implementation Dependencies.Picasso
+
+    testImplementation Dependencies.Testing
+    androidTestImplementation Dependencies.AndroidTesting
 }
