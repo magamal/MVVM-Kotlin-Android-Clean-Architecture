@@ -10,6 +10,7 @@ dependencies {
 
     implementation Dependencies.Koin
     implementation Dependencies.RxJava
+    implementation Dependencies.CoroutinesAndroid
     implementation Dependencies.Kotlin
 }
 

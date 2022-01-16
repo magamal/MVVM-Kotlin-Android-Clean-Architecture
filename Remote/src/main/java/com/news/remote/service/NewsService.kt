@@ -12,8 +12,8 @@ import retrofit2.http.Query
 interface NewsService {
 
     @GET(RestApiConstants.GET_NEWS_END_POINT)
-    fun getNews(
+    suspend fun getNews(
         @Query(RestApiConstants.PAGE_SIZE_PARAMS) pageSize: Int,
         @Query(RestApiConstants.PAGE_PARAMS) page: Int
-    ): Observable<NewsResponseModel>
+    ): NewsResponseModel
 }

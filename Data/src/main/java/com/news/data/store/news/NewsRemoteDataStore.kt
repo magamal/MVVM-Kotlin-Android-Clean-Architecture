@@ -8,7 +8,7 @@ import com.news.data.repository.news.NewsRemote
  */
 class NewsRemoteDataStore(private val newsRemote: NewsRemote) : NewsDataStore {
 
-    override fun getNews(page: Int, pageSize: Int) =
+    override suspend fun getNews(page: Int, pageSize: Int) =
         newsRemote
             .getNews(page = page, pageSize = pageSize)
 

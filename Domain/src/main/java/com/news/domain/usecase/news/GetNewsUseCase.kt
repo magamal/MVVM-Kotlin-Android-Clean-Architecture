@@ -2,6 +2,7 @@ package com.news.domain.usecase.news
 
 import com.news.domain.executor.ObservableUseCase
 import com.news.domain.executor.PostExecutionThread
+import com.news.domain.executor.SuspendUseCase
 import com.news.domain.models.news.News
 import com.news.domain.repository.NewsRepository
 
@@ -10,10 +11,9 @@ import com.news.domain.repository.NewsRepository
  */
 class GetNewsUseCase(
     private val newsRepository: NewsRepository
-    , schedulerThread: PostExecutionThread
-) : ObservableUseCase<News, GetNewsUseCase.Params>(schedulerThread) {
+) : SuspendUseCase<News, GetNewsUseCase.Params>() {
 
-    override fun buildUseCaseObservable(params: Params?) =
+    override suspend fun buildUseCaseSuspend(params: Params?) =
         if (params == null)
             throw IllegalAccessException("Params can't be null")
         else newsRepository
@@ -23,7 +23,7 @@ class GetNewsUseCase(
             )
 
 
-    data class Params private constructor(val page: Int, val pageSize: Int) {
+    data class Params constructor(val page: Int, val pageSize: Int) {
         companion object {
             fun forPage(page: Int, pageSize: Int) =
                 Params(page = page, pageSize = pageSize)

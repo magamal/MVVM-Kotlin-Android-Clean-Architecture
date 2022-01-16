@@ -14,9 +14,8 @@ class NewsRetrofitRemoteRepo(
     private val newsMapper: NewsResponseModelMapper
 ) : NewsRemote {
 
-    override fun getNews(page: Int, pageSize: Int): Observable<NewsEntity> =
+   override suspend fun getNews(page: Int, pageSize: Int): NewsEntity =
         newsService
             .getNews(page = page, pageSize = pageSize)
-            .map(newsMapper::mapFromModel)
-
+            .run (newsMapper::mapFromModel)
 }

@@ -7,4 +7,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.Kotlin
     implementation Dependencies.RxJava
+    implementation Dependencies.CoroutinesAndroid
+
 }

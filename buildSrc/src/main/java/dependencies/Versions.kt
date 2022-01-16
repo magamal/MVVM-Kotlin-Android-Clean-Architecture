@@ -36,7 +36,7 @@ object Versions {
     }
 
     object Kotlin {
-        const val std = "1.3.50"
+        const val std = "1.5.0"
     }
 
     const val KOIN = "2.0.1"

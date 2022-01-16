@@ -39,6 +39,8 @@ dependencies {
     implementation project(':Common')
 
     implementation Dependencies.Kotlin
+
+    implementation Dependencies.CoroutinesAndroid
     implementation Dependencies.RxJava
     implementation Dependencies.RxAndroid
     implementation Dependencies.Koin

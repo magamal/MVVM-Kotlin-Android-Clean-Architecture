@@ -10,7 +10,7 @@ object Dependencies {
 
     const val AppCompact =
         "androidx.appcompat:appcompat:${Versions.AndroidX.main}"
-    const val AndroidGradlePlugin =
+    const val androidGradlePlugin =
         "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
 
     val AndroidXCore = arrayOf(
@@ -34,7 +34,8 @@ object Dependencies {
 
     val AndroidArchComponent = arrayOf(
         "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidX.lifeCycle}",
-        "androidx.lifecycle:lifecycle-reactivestreams:${Versions.AndroidX.lifeCycle}"
+        "androidx.lifecycle:lifecycle-reactivestreams:${Versions.AndroidX.lifeCycle}",
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidX.lifeCycle}"
     )
 
     const val LifeCycleAnnotations =
@@ -60,6 +61,15 @@ object Dependencies {
     const val KotlinPlugin =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Kotlin.std}"
 
+
+
+    val CoroutinesCore = arrayOf(
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.std}"
+    )
+
+    val CoroutinesAndroid = arrayOf(
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlin.std}"
+    )
 
     val RxJava = arrayOf(
         "io.reactivex.rxjava3:rxkotlin:${Versions.RX.rxKotlin}",
