@@ -39,7 +39,7 @@ object Versions {
         const val std = "1.5.0"
     }
 
-    const val KOIN = "2.0.1"
+    const val KOIN = "3.1.5"
 
     object Google {
 

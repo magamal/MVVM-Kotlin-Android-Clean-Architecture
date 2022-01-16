@@ -102,12 +102,12 @@ object Dependencies {
         "androidx.room:room-compiler:${Versions.AndroidX.lifeCycle}"
 
     const val Koin =
-        "org.koin:koin-androidx-scope:${Versions.KOIN}"
+        "io.insert-koin:koin-core:${Versions.KOIN}"
 
     val KoinAndroid = arrayOf(
         Koin,
-        "org.koin:koin-androidx-viewmodel:${Versions.KOIN}",
-        "org.koin:koin-androidx-ext:${Versions.KOIN}"
+        "io.insert-koin:koin-android:${Versions.KOIN}",
+        "io.insert-koin:koin-android:${Versions.KOIN}"
     )
 
     const val Gson = "com.google.code.gson:gson:${Versions.GSON}"
